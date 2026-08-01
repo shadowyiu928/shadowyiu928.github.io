@@ -3,7 +3,7 @@
     ========================================================================== */
 
 /* Color codes used for the theme */
-$primary-color              : #0ea1c5;
+$primary-color              : #f0a020;
 $gray                       : #7a8288;
 $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
@@ -13,9 +13,9 @@ $background                 : #474747;
 $background-light           : mix(#fff, $background, 80%);
 $background-lighter         : mix(#fff, $background, 90%);
 $text                       : #ffffff;
-$link                       : #0ea1c5;
-$link-dark                  : mix(#000, $link, 25%);
-$link-light                 : mix(#fff, $link, 25%);
+$link                       : #f0a020;
+$link-dark                  : #ffb84d; /* brighter on hover for dark backgrounds */
+$link-light                 : #e09820;
 
 /* Color codes used for the site */
 $danger-color               : #ee5f5b;
@@ -31,8 +31,8 @@ $global-transition          : all 0.2s ease-in-out;
 $masthead-height            : 70px;
 $navicon-width              : 28px;
 $navicon-height             : 4px;
-$sidebar-link-max-width     : 250px;
-$sidebar-screen-min-width   : 1024px;
+$sidebar-link-max-width     : 360px;
+$sidebar-screen-min-width   : 1280px;
 
 /* Dark theme for the site */
 html[data-theme="dark"] {

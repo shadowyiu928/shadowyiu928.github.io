@@ -17,15 +17,8 @@
     margin-top: 1em;
   }
 
-  @media screen and (min-width: $sidebar-screen-min-width) {
-    height: 100vh;
-    overflow-y: auto;               // Add scrollbar if the sidebar is too long
-    position: fixed;
-    padding-top: $masthead-height;
-  }
-
   @include breakpoint($large) {
-    @include span(2 of 12);
+    @include span(4 of 12);
     opacity: 1;
     -webkit-transition: opacity 0.2s ease-in-out;
             transition: opacity 0.2s ease-in-out;
@@ -33,6 +26,17 @@
     &:hover {
       opacity: 1;
     }
+  }
+
+  /* Only pin the sidebar once the layout is wide enough to avoid overlap. */
+  @media screen and (min-width: $sidebar-screen-min-width) {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    padding-top: $masthead-height;
+    width: $sidebar-link-max-width;
+    max-width: $sidebar-link-max-width;
   }
 
   @include breakpoint($x-large) {
@@ -45,6 +49,10 @@
     font-family: $sans-serif-narrow;
   }
 
+  h3.author__name {
+    font-family: "Lora", Georgia, "Times New Roman", serif !important;
+  }
+
   h3, h4 {
     font-size: $type-size-5;
   }
@@ -53,6 +61,10 @@
     font-family: $sans-serif;
     font-size: $type-size-6;
     line-height: 1.5;
+  }
+
+  .author__content p {
+    font-family: "Lora", Georgia, "Times New Roman", serif !important;
   }
 
   img {
@@ -140,21 +152,29 @@
    Author profile and links
    ========================================================================== */
 
+.author__profile {
+  @include breakpoint($large) {
+    text-align: center;
+  }
+
+  font-family: "Lora", Georgia, "Times New Roman", serif;
+}
+
 .author__avatar {
   display: table-cell;
   vertical-align: top;
   width: 36px;
-  // set width only, for non-square avatars
-  // height: 36px;
 
   @include breakpoint($large) {
     display: block;
     width: auto;
     height: auto;
+    text-align: center;
+    margin-bottom: 1em;
   }
 
   img {
-    max-width: 175px;
+    max-width: 260px;
     border-radius: 50%;
 
     @include breakpoint($large) {
@@ -169,51 +189,111 @@
   vertical-align: top;
   padding-left: 15px;
   padding-right: 25px;
-  line-height: 1;
+  line-height: 1.35;
 
   @include breakpoint($large) {
     display: block;
     width: 100%;
     padding-left: 0;
     padding-right: 0;
+    text-align: center;
   }
 }
 
 .author__name {
   margin: 0;
+  font-family: "Lora", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  color: #000;
 
   @include breakpoint($large) {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 0.55em;
+    font-size: 1.65rem;
+    line-height: 1.25;
   }
 }
+
 .sidebar .author__name {
-  font-family: $sans-serif;
+  font-family: "Lora", Georgia, "Times New Roman", serif !important;
   font-size: $type-size-5;
-}
-
-.sidebar .author__desktop {
-  display: none;
-  @media screen and (min-width: 1024px) {
-    display: block;
-  }
-}
-
-.author__pronouns {
-  margin: 0;
+  color: #000;
 
   @include breakpoint($large) {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-size: 1.65rem !important;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.85em;
   }
+}
+
+.sidebar .author__name-alias {
+  display: inline-block;
+  margin-top: 0.15em;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.sidebar .author__title,
+.sidebar .author__employer,
+.sidebar .author__location {
+  margin: 0;
+  font-family: "Lora", Georgia, "Times New Roman", serif !important;
+  font-size: 0.98rem !important;
+  font-weight: 500;
+  font-style: normal;
+  color: #111;
+  line-height: 1.4 !important;
+}
+
+.sidebar .author__title {
+  margin-bottom: 0.35em;
+}
+
+.sidebar .author__location .fa-map-marker-alt {
+  margin-right: 0.3em;
+  color: #f0a020;
+  font-size: 0.9em;
+}
+
+.sidebar .author__employer {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+  padding-right: 0.25em;
+}
+
+.author__employer {
+  margin-bottom: 0;
+}
+
+.author__location {
+  margin-bottom: 2em;
 }
 
 .author__bio {
-  margin: 0;
+  margin: 0 0 1em;
+  font-family: "Lora", Georgia, "Times New Roman", serif;
+  font-size: $type-size-6;
+  font-style: italic;
+  color: #000;
+  line-height: 1.45;
+}
 
-  @include breakpoint($large) {
-    margin-top: 10px;
-    margin-bottom: 20px;
+html[data-theme="dark"] {
+  .author__name,
+  .sidebar .author__name,
+  .sidebar .author__name-alias,
+  .sidebar .author__title,
+  .sidebar .author__employer,
+  .sidebar .author__location,
+  .author__bio,
+  .sidebar .author__content p {
+    color: #fff !important;
   }
 }
 
@@ -223,14 +303,7 @@
   vertical-align: middle;
   font-family: $sans-serif;
   z-index: 10;
-  position: relative;
   cursor: pointer;
-
-  li:last-child {
-    a {
-      margin-bottom: 0;
-    }
-  }
 
   @include breakpoint($large) {
     display: block;
@@ -260,9 +333,12 @@
   cursor: default;
 
   @include breakpoint($large) {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
     position: relative;
-    margin: 0;
+    margin: 0.5em 0 0;
     padding: 0;
     border: 0;
     background: transparent;
@@ -305,20 +381,24 @@
 
   li {
     white-space: nowrap;
+    list-style: none;
   }
 
   a {
-    display: block;
-    margin-bottom: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    color: inherit;
-    font-size: $type-size-5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    padding: 0.15em;
+    color: var(--global-text-color-light);
+    font-size: 1.95rem;
     text-decoration: none;
+    transition: color 0.2s ease;
 
-    &:hover {
-      text-decoration: underline;
+    &:hover,
+    &:focus {
+      color: #f0a020;
+      text-decoration: none;
     }
   }
 }

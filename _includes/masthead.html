@@ -1,29 +1,86 @@
 {% include base_path %}
 <div class="masthead">
   <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><span class="navicon"></span></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
-            <a href="{{ base_path }}/">{{ site.title }}</a>
-          </li>
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-            {% else %}
-              {% assign domain = base_path %}
+    <nav class="site-nav" aria-label="Primary">
+      <a class="site-nav__brand {% if page.url == '/' %}is-active{% endif %}" href="{{ base_path }}/">{{ site.title }}</a>
+
+      <ul class="site-nav__links">
+        {% for link in site.data.navigation.main %}
+          {% if link.url contains 'http' %}
+            {% assign domain = '' %}
+          {% else %}
+            {% assign domain = base_path %}
+          {% endif %}
+
+          {% if link.children %}
+            <li class="site-nav__item site-nav__item--dropdown {% if page.url contains '/hobbies' %}is-active{% endif %}">
+              <span class="site-nav__dropdown-label">
+                {% if link.url %}
+                  <a class="site-nav__dropdown-parent" href="{{ domain }}{{ link.url }}" {% if page.url == link.url %}aria-current="page"{% endif %}>{{ link.title }}</a>
+                {% else %}
+                  <span class="site-nav__dropdown-parent">{{ link.title }}</span>
+                {% endif %}
+                <button class="site-nav__dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-label="{{ link.title }} menu">
+                  <span class="site-nav__caret" aria-hidden="true">▾</span>
+                </button>
+              </span>
+              <ul class="site-nav__dropdown" role="menu">
+                {% for child in link.children %}
+                  <li role="none">
+                    <a role="menuitem" href="{{ domain }}{{ child.url }}" {% if page.url == child.url %}aria-current="page"{% endif %}>{{ child.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            {% assign is_active = false %}
+            {% if link.url == '/' %}
+              {% if page.url == '/' %}{% assign is_active = true %}{% endif %}
+            {% elsif page.url == link.url or page.url contains link.url %}
+              {% assign is_active = true %}
             {% endif %}
-            <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
+            <li class="site-nav__item {% if is_active %}is-active{% endif %}">
               <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
             </li>
-          {% endfor %}
-          <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
-          </li>
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
+          {% endif %}
+        {% endfor %}
+
+        <li id="theme-toggle" class="site-nav__item site-nav__item--theme">
+          <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </div>
+
+<script>
+  (function () {
+    var dropdowns = document.querySelectorAll('.site-nav__item--dropdown');
+    dropdowns.forEach(function (item) {
+      var toggle = item.querySelector('.site-nav__dropdown-toggle');
+      if (!toggle) return;
+
+      toggle.addEventListener('click', function (event) {
+        event.stopPropagation();
+        var open = item.classList.contains('is-open');
+        dropdowns.forEach(function (other) {
+          other.classList.remove('is-open');
+          var otherToggle = other.querySelector('.site-nav__dropdown-toggle');
+          if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+        });
+        if (!open) {
+          item.classList.add('is-open');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    document.addEventListener('click', function () {
+      dropdowns.forEach(function (item) {
+        item.classList.remove('is-open');
+        var toggle = item.querySelector('.site-nav__dropdown-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>

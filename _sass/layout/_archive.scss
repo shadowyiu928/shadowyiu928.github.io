@@ -10,8 +10,16 @@
   }
 
   @include breakpoint($large) {
-    @include span(10 of 12 last);
-    @include prefix(0.5 of 12);
+    @include span(8 of 12 last);
+    @include prefix(0.35 of 12);
+  }
+
+  @media screen and (min-width: $sidebar-screen-min-width) {
+    float: right;
+    clear: none;
+    width: calc(100% - #{$sidebar-link-max-width} - 1.75rem);
+    padding-left: 0.75rem;
+    margin-right: 0;
   }
 
   a {
