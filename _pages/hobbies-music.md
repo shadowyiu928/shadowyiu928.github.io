@@ -395,6 +395,29 @@ Outside of academic research, I am also an enthusiastic musician, actively invol
       paused = false;
       scheduleNext();
     });
+
+    var touchStartX = 0;
+    var touchStartY = 0;
+
+    carousel.addEventListener('touchstart', function (e) {
+      if (!e.changedTouches.length) return;
+      touchStartX = e.changedTouches[0].clientX;
+      touchStartY = e.changedTouches[0].clientY;
+      paused = true;
+      clearTimer();
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', function (e) {
+      if (!e.changedTouches.length) return;
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      var dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+        if (dx < 0) goTo(index + 1, true);
+        else goTo(index - 1, true);
+      }
+      paused = false;
+      scheduleNext();
+    }, { passive: true });
   }
 
   document.querySelectorAll('.music-carousel').forEach(initCarousel);

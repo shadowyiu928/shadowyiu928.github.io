@@ -15,6 +15,11 @@
           animation-delay: 0.15s;
   z-index: 20;
 
+  /* Keep header in document flow on phones so content sits right under it. */
+  @media (max-width: 600px) {
+    position: sticky;
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -182,13 +187,31 @@ html[data-theme="dark"] .site-nav__dropdown a[aria-current="page"] {
 }
 
 @media (max-width: 600px) {
+  .masthead__inner-wrap {
+    padding: 0.45em 0.85em;
+  }
+
   .site-nav {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .site-nav__brand {
+    font-size: 1.2rem;
   }
 
   .site-nav__links {
     width: 100%;
     justify-content: flex-start;
+    gap: 0.15rem 0.85rem;
+  }
+
+  .site-nav__item > a,
+  .site-nav__item .site-nav__dropdown-parent,
+  .site-nav__item .site-nav__dropdown-toggle {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    font-size: 0.95rem;
   }
 }

@@ -20,6 +20,11 @@ body {
   font-family: $global-font-family;
   line-height: 1.5;
 
+  /* On phones the masthead is in-flow (sticky), so no reserved top padding. */
+  @media (max-width: 600px) {
+    padding-top: 0;
+  }
+
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
     overflow: hidden;

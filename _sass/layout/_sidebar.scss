@@ -12,10 +12,7 @@
 
   @include clearfix();
   margin-bottom: 1em;
-
-  @media (orientation: portrait) {
-    margin-top: 1em;
-  }
+  margin-top: 0;
 
   @include breakpoint($large) {
     @include span(4 of 12);
@@ -153,17 +150,25 @@
    ========================================================================== */
 
 .author__profile {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "avatar content"
+    ". contact";
+  align-items: start;
+  column-gap: 15px;
+  font-family: "Lora", Georgia, "Times New Roman", serif;
+
   @include breakpoint($large) {
+    display: block;
     text-align: center;
   }
-
-  font-family: "Lora", Georgia, "Times New Roman", serif;
 }
 
 .author__avatar {
-  display: table-cell;
-  vertical-align: top;
-  width: 36px;
+  grid-area: avatar;
+  display: block;
+  width: 72px;
 
   @include breakpoint($large) {
     display: block;
@@ -176,8 +181,13 @@
   img {
     max-width: 260px;
     border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
 
     @include breakpoint($large) {
+      width: auto;
+      height: auto;
       padding: 5px;
       border: 1px solid var(--global-border-color);
     }
@@ -185,9 +195,9 @@
 }
 
 .author__content {
-  display: table-cell;
-  vertical-align: top;
-  padding-left: 15px;
+  grid-area: content;
+  display: block;
+  padding-left: 0;
   padding-right: 25px;
   line-height: 1.35;
 
@@ -205,6 +215,7 @@
   font-family: "Lora", Georgia, "Times New Roman", serif;
   font-weight: 700;
   color: #000;
+  line-height: 1.2;
 
   @include breakpoint($large) {
     margin-top: 0;
@@ -215,6 +226,8 @@
 }
 
 .sidebar .author__name {
+  margin-top: 0 !important;
+  margin-bottom: 0.7em;
   font-family: "Lora", Georgia, "Times New Roman", serif !important;
   font-size: $type-size-5;
   color: #000;
@@ -224,7 +237,7 @@
     font-weight: 700;
     line-height: 1.25;
     letter-spacing: -0.02em;
-    margin-bottom: 0.85em;
+    margin-bottom: 1em;
   }
 }
 
@@ -272,7 +285,11 @@
 }
 
 .author__location {
-  margin-bottom: 2em;
+  margin-bottom: 0.55em;
+
+  @include breakpoint($large) {
+    margin-bottom: 2em;
+  }
 }
 
 .author__bio {
@@ -298,85 +315,44 @@ html[data-theme="dark"] {
 }
 
 .author__urls-wrapper {
+  grid-area: contact;
   position: relative;
-  display: table-cell;
-  vertical-align: middle;
+  display: block;
+  margin-top: 0.25em;
   font-family: $sans-serif;
   z-index: 10;
-  cursor: pointer;
 
   @include breakpoint($large) {
-    display: block;
+    margin-top: 0;
   }
 
   button {
-    margin-bottom: 0;
-
-    @include breakpoint($large) {
-      display: none;
-    }
+    display: none;
   }
 }
 
 .author__urls {
-  display: none;
-  position: absolute;
-  right: 0;
-  margin-top: 15px;
-  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  margin: 0;
+  padding: 0;
   list-style-type: none;
-  border: 1px solid var(--global-border-color);
-  border-radius: $border-radius;
-  background: var(--global-bg-color);
-  z-index: -1;
-  box-shadow: 0 0 10px rgba(#000, 0.25);
-  cursor: default;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 
   @include breakpoint($large) {
-    display: flex;
     justify-content: center;
-    align-items: center;
     gap: 1.25rem;
-    position: relative;
     margin: 0.5em 0 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
   }
 
-  &:before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: -11px;
-    left: calc(50% - 10px);
-    width: 0;
-    border-style: solid;
-    border-width: 0 10px 10px;
-    border-color: var(--global-border-color) transparent;
-    z-index: 0;
-
-    @include breakpoint($large) {
-      display: none;
-    }
-  }
-
+  &:before,
   &:after {
-    display: block;
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: calc(50% - 10px);
-    width: 0;
-    border-style: solid;
-    border-width: 0 10px 10px;
-    border-color: #fff transparent;
-    z-index: 1;
-
-    @include breakpoint($large) {
-      display: none;
-    }
+    display: none;
   }
 
   li {
@@ -391,9 +367,13 @@ html[data-theme="dark"] {
     margin-bottom: 0;
     padding: 0.15em;
     color: var(--global-text-color-light);
-    font-size: 1.95rem;
+    font-size: 1.55rem;
     text-decoration: none;
     transition: color 0.2s ease;
+
+    @include breakpoint($large) {
+      font-size: 1.95rem;
+    }
 
     &:hover,
     &:focus {

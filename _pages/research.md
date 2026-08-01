@@ -10,11 +10,11 @@ author_profile: true
 
 ## 📄 Publications
 
-### PhD Publications
+### Ph.D.
 
 <p class="pub-empty">Coming soon.</p>
 
-### MPhil Publications
+### M.Phil.
 
 <div class="pub-list">
 
@@ -66,7 +66,7 @@ author_profile: true
 
 </div>
 
-### UG Publications
+### UG
 
 <div class="pub-list">
 
