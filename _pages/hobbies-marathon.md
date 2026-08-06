@@ -4,7 +4,9 @@ title: "Marathon"
 author_profile: true
 ---
 
-Outside of research, I am also a passionate runner🏃‍♀️. From my first 10K in SCHKM2024, first half marathon in SCHKM2025 to completing a full marathon in SCHKM2026, each race marks a new milestone, and my next goal is to finish a full triathlon🏊🏻‍♀️🚴🏻‍♀️🏃‍♀️.
+Outside of research, I am also a passionate runner🏃‍♀️. My journey began with my first 10K at SCHKM2024, progressed to the half marathon in SCHKM2025, and culminated in my first full marathon at SCHKM2026, each race marking a new milestone. My next goals are to become Ms. Thousand (千金小姐) at SCHKM (sub-3:30) and to finish a full triathlon (IRONMAN 140.6) 🏊🏻‍♀️🚴🏻‍♀️🏃‍♀️ in the future. 
+
+When I'm not running, swimming, or cycling, I also enjoy playing badminton🏸, ice-skating⛸️, and hiking⛰️ with friends.
 
 ## Personal Bests (PB)
 

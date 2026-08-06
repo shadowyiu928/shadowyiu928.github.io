@@ -59,7 +59,7 @@ author_profile: true
 
 Joining the **HKUST Robotics Team** in my undergraduate year 1 was one of the experiences that most shaped how I grow as an engineer. Known for competing at a high level internationally, the team gave me a first real home in robotics — not only as a set of skills, but as a way of working with people under pressure.
 
-In my first year I worked hard to earn a place on the Robocon sub-team. As a sophomore I stayed on for ABU Robocon 2020 (*ROBO Rugby 7s*), serving as <strong>Team Leader</strong> and <strong>Mechanical Engineer</strong> of **War Dragon** (火征龍). From the outside, another HKUST championship can look inevitable. Inside the lab — with delays, almost-cancellations, and a season reshaped by the pandemic — nothing about it felt given.
+In my first year I worked hard to earn a place on the Robocon sub-team. As a sophomore I stayed on for ABU Robocon 2020 (*ROBO Rugby 7s*), serving as <strong>Team Leader</strong> and <strong>Mechanical Engineer</strong> of **War Dragon** (征龍). From the outside, another HKUST championship can look inevitable. Inside the lab — with delays, almost-cancellations, and a season reshaped by the pandemic — nothing about it felt given.
 
 <div class="robotics-story-layout">
   <div class="robotics-story">

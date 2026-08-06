@@ -659,32 +659,6 @@ html[data-theme="dark"] .sports-pb-list__time::before {
   font-weight: 600;
   line-height: 1.35 !important;
   color: #1a1a1a;
-
-  a,
-  a:visited,
-  a:focus {
-    color: #1a1a1a !important;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease, color 0.2s ease;
-  }
-
-  a:hover {
-    color: #f0a020 !important;
-    text-decoration: none;
-    border-bottom-color: #f0a020;
-  }
-}
-
-.page__content .pub-item__title a,
-.page__content .pub-item__title a:visited {
-  color: #1a1a1a !important;
-  text-decoration: none;
-}
-
-.page__content .pub-item__title a:hover {
-  color: #f0a020 !important;
-  text-decoration: none;
 }
 
 .pub-item__authors,
@@ -712,6 +686,49 @@ html[data-theme="dark"] .sports-pb-list__time::before {
   color: #7a6a55;
 }
 
+.pub-item__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.7em 0 0 !important;
+}
+
+.pub-item__link {
+  display: inline-block;
+  padding: 0.22em 0.7em;
+  border: 1px solid #d4b48a;
+  border-radius: 6px;
+  background: #fff8ee;
+  color: #5c4630 !important;
+  font-family: $sans-serif;
+  font-size: 0.78rem !important;
+  font-weight: 600;
+  line-height: 1.35 !important;
+  letter-spacing: 0.02em;
+  text-decoration: none !important;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    background: #f0a020;
+    border-color: #f0a020;
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+}
+
+.page__content .pub-item__link,
+.page__content .pub-item__link:visited {
+  color: #5c4630 !important;
+  text-decoration: none !important;
+}
+
+.page__content .pub-item__link:hover,
+.page__content .pub-item__link:focus {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
 html[data-theme="dark"] .pub-empty,
 html[data-theme="dark"] .pub-item__meta,
 html[data-theme="dark"] .pub-item__venue {
@@ -723,16 +740,21 @@ html[data-theme="dark"] .pub-item__authors {
   color: var(--global-text-color);
 }
 
-html[data-theme="dark"] .pub-item__title a,
-html[data-theme="dark"] .pub-item__title a:visited,
-html[data-theme="dark"] .page__content .pub-item__title a {
+html[data-theme="dark"] .pub-item__link,
+html[data-theme="dark"] .page__content .pub-item__link,
+html[data-theme="dark"] .page__content .pub-item__link:visited {
+  background: rgba(240, 160, 32, 0.12);
+  border-color: rgba(240, 160, 32, 0.45);
   color: var(--global-text-color) !important;
 }
 
-html[data-theme="dark"] .pub-item__title a:hover,
-html[data-theme="dark"] .page__content .pub-item__title a:hover {
-  color: #f0a020 !important;
-  border-bottom-color: #f0a020;
+html[data-theme="dark"] .pub-item__link:hover,
+html[data-theme="dark"] .pub-item__link:focus,
+html[data-theme="dark"] .page__content .pub-item__link:hover,
+html[data-theme="dark"] .page__content .pub-item__link:focus {
+  background: #f0a020;
+  border-color: #f0a020;
+  color: #1a1a1a !important;
 }
 
 .robotics-hero {

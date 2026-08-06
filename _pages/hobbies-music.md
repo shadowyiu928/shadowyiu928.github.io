@@ -4,7 +4,7 @@ title: "Music"
 author_profile: true
 ---
 
-Outside of academic research, I am also an enthusiastic musician, actively involved in choir, orchestra, opera, and musical performances. I perform as a vocalist, pianist, and percussionist, and have taken on leadership roles as an Alto part leader and accompaniment coordinator. Additionally, I am an associate conductor, teaching and mentoring students at the secondary school.
+Outside of academic research, I am also an enthusiastic musician🎶, actively involved in choir, orchestra, opera, and musical performances. I perform as a vocalist🎤, pianist🎹, and percussionist🥁, and have taken on leadership roles as an Alto part leader and accompaniment coordinator. Additionally, I am an associate conductor👩🏻‍💼, teaching and mentoring students at the secondary school.
 
 ## Roles
 
