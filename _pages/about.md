@@ -11,7 +11,7 @@ Hi! My name is Shadow. I am a Ph.D. student in the College of Computing and Data
 
 I obtained my M.Phil. at the Department of Electronic and Computer Engineering (ECE) from the [Hong Kong University of Science and Technology (HKUST)](https://www.hkust.edu.hk/), and my B.Eng. in Computer Engineering (CPEG) with minors in Robotics, Physics and Humanities (Music) from the same university.
 
-Outside of academia, I am a dedicated [musician]({{ '/hobbies/music/' | relative_url }})🎶 and a [marathon runner]({{ '/hobbies/marathon/' | relative_url }})🏃🏻‍♀️. My next goal is to finish a full triathlon🏊🏻‍♀️🚴🏻‍♀️🏃🏻‍♀️.
+Outside of academia, I am a dedicated [musician]({{ '/hobbies/music/' | relative_url }})🎶 and a [marathon runner]({{ '/hobbies/marathon/' | relative_url }})🏃🏻‍♀️. My future goal is to finish a full triathlon🏊🏻‍♀️🚴🏻‍♀️🏃🏻‍♀️.
 
 ## Education
 
