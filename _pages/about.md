@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi! My name is Shadow. I am a Ph.D. student in the College of Computing and Data Science (CCDS) at [Nanyang Technological University (NTU)](https://www.ntu.edu.sg/), Singapore, where I am privileged to be supervised by [Asst. Prof. Yoonchang Sung](https://yoonchangsung.com/) in the [Algorithmic Robotics Group (ARG)](https://algrobogroup.github.io/). My research interests lie at the intersection of Robot Learning and VLA models, with a current focus on sim-to-real generalization, uncertainty-aware control, and multimodal perception for robot manipulation.
+Hi! My name is Shadow. I am a Ph.D. student in the College of Computing and Data Science (CCDS) at [Nanyang Technological University (NTU)](https://www.ntu.edu.sg/), Singapore, where I am privileged to be supervised by [Asst. Prof. Yoonchang Sung](https://yoonchangsung.com/) in the [Algorithmic Robotics Group (ARG)](https://algrobogroup.github.io/). My research interests lie at the intersection of **Embodied AI** and **VLA models**, with a current focus on advancing robot learning, sim-to-real transfer, and robust robotic manipulation in unstructured environments.
 
 I obtained my M.Phil. at the Department of Electronic and Computer Engineering (ECE) from the [Hong Kong University of Science and Technology (HKUST)](https://www.hkust.edu.hk/), and my B.Eng. in Computer Engineering (CPEG) with minors in Robotics, Physics and Humanities (Music) from the same university.
 
