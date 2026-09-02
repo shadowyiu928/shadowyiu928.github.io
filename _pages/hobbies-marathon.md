@@ -19,7 +19,7 @@ When I'm not running, swimming, or cycling, I also enjoy playing badminton🏸, 
 
 <div class="music-roles sports-events">
 
-  <article class="music-role music-role--photo-right">
+  <article class="music-role">
     <div class="music-role__body">
       <h3 class="music-role__org">Standard Chartered Hong Kong Marathon 2026</h3>
       <p class="music-role__dates">18 Jan 2026 · My First Full Marathon · Personal Best</p>
@@ -58,7 +58,7 @@ When I'm not running, swimming, or cycling, I also enjoy playing badminton🏸, 
     </div>
   </article>
 
-  <article class="music-role music-role--photo-left">
+  <article class="music-role">
     <div class="music-role__media music-carousel" data-interval-min="2500" data-interval-max="6000">
       <div class="music-carousel__track">
         <div class="music-carousel__slide is-active">
@@ -103,7 +103,7 @@ When I'm not running, swimming, or cycling, I also enjoy playing badminton🏸, 
     </div>
   </article>
 
-  <article class="music-role music-role--photo-right">
+  <article class="music-role">
     <div class="music-role__body">
       <h3 class="music-role__org">Standard Chartered Hong Kong Marathon 2025</h3>
       <p class="music-role__dates">9 Feb 2025 · My First Half Marathon</p>
@@ -142,7 +142,7 @@ When I'm not running, swimming, or cycling, I also enjoy playing badminton🏸, 
     </div>
   </article>
 
-  <article class="music-role music-role--photo-left">
+  <article class="music-role">
     <div class="music-role__media music-carousel" data-interval-min="2500" data-interval-max="6000">
       <div class="music-carousel__track">
         <div class="music-carousel__slide is-active">

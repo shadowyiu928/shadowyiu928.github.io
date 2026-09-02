@@ -291,37 +291,32 @@ html[data-theme="dark"] .music-role__dates {
     min-height: 0;
   }
 
+  /* Odd items: text left, photo right. Even items: photo left, text right. */
+  @include breakpoint($medium) {
+    &:nth-child(odd) {
+      .music-role__body {
+        order: 1;
+      }
+
+      .music-role__media {
+        order: 2;
+      }
+    }
+
+    &:nth-child(even) {
+      .music-role__media {
+        order: 1;
+      }
+
+      .music-role__body {
+        order: 2;
+      }
+    }
+  }
+
   &:hover {
     transform: none;
     box-shadow: none;
-  }
-}
-
-.music-role--photo-right {
-  @include breakpoint($medium) {
-    grid-template-columns: 1fr 1fr;
-
-    .music-role__body {
-      order: 1;
-    }
-
-    .music-role__media {
-      order: 2;
-    }
-  }
-}
-
-.music-role--photo-left {
-  @include breakpoint($medium) {
-    grid-template-columns: 1fr 1fr;
-
-    .music-role__media {
-      order: 1;
-    }
-
-    .music-role__body {
-      order: 2;
-    }
   }
 }
 
