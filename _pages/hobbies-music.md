@@ -4,7 +4,7 @@ title: "Music"
 author_profile: true
 ---
 
-Outside of academic research, I am also an enthusiastic musician🎶, actively involved in choir, orchestra, opera, and musical performances. I perform as a vocalist🎤, pianist🎹, and percussionist🥁, and have taken on leadership roles as an Alto part leader and accompaniment coordinator. Additionally, I am an associate conductor👩🏻‍💼, teaching and mentoring students at the secondary school.
+Outside of academic research, I am also an enthusiastic musician🎶, actively involved in choir, orchestra, opera, and musical performances. I perform as a vocalist🎤, pianist🎹, and percussionist🥁, and have taken on leadership roles as a conductor, alto section leader, and accompaniment coordinator. I previously served as an associate conductor👩🏻‍💼 for a secondary school choir, teaching and mentoring students.
 
 ## Roles
 
@@ -15,7 +15,8 @@ Outside of academic research, I am also an enthusiastic musician🎶, actively i
       <h3 class="music-role__org"><a href="https://ntucac.com/choir/" target="_blank" rel="noopener noreferrer">Nanyang Technological University<br>CAC Choir</a></h3>
       <p class="music-role__dates">Aug 2026 – Present</p>
       <ul class="music-role__roles">
-        <li>Alto Singer</li>
+        <li>Student Conductor</li>
+        <li>Alto Section Leader</li>
       </ul>
     </div>
     <div class="music-role__media music-carousel" data-interval-min="2500" data-interval-max="6000">
@@ -34,9 +35,9 @@ Outside of academic research, I am also an enthusiastic musician🎶, actively i
       <p class="music-role__dates">Sep 2018 – Jul 2026</p>
       <ul class="music-role__roles">
         <li>Alto Part Leader</li>
-        <li>Pianist</li>
         <li>Accompaniment Coordinator</li>
         <li>Student Conductor</li>
+        <li>Pianist</li>
       </ul>
     </div>
     <div class="music-role__media music-carousel" data-interval-min="2500" data-interval-max="6000">
