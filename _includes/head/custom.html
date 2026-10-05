@@ -20,6 +20,20 @@
 <link rel="icon" type="image/svg+xml" href="{{ base_path }}/images/favicon.svg?v=avatar2"/>
 <link rel="shortcut icon" href="{{ base_path }}/favicon.ico?v=avatar2"/>
 <link rel="manifest" href="{{ base_path }}/images/manifest.json"/>
-<meta name="theme-color" content="var(--global-bg-color)"/>
+<!-- Browser UI colour; meta tags can't read CSS variables, so mirror --global-bg-color -->
+<meta name="theme-color" content="#fff6e8" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#474747" media="(prefers-color-scheme: dark)"/>
+<script>
+  // Follow the manual light/dark toggle, which may differ from the OS preference
+  (function () {
+    function syncThemeColor() {
+      var bg = getComputedStyle(document.documentElement).getPropertyValue('--global-bg-color').trim();
+      if (!bg) return;
+      document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) { m.setAttribute('content', bg); });
+    }
+    new MutationObserver(syncThemeColor).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    document.addEventListener('DOMContentLoaded', syncThemeColor);
+  })();
+</script>
 
 <!-- end custom head snippets -->
