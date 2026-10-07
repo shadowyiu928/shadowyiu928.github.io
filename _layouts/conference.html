@@ -1,0 +1,83 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+{% comment %}
+  Photos live in images/conferences/<this file's name>/, so the story can use
+  bare file names: ![caption](photo.jpg). Bare names are rewritten to that
+  folder; absolute paths and full URLs are left alone.
+{% endcomment %}
+{% assign photo_base = '/images/conferences/' | append: page.slug | append: '/' | relative_url %}
+{% capture photo_src %}src="{{ photo_base }}{% endcapture %}
+{% capture fix_url %}{{ photo_src }}http{% endcapture %}
+{% capture fix_root %}{{ photo_src }}/{% endcapture %}
+{% capture fix_data %}{{ photo_src }}data:{% endcapture %}
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+
+  <article class="page conference-page">
+    <div class="page__inner-wrap">
+      <p class="conference-back"><a href="{{ '/conferences/' | relative_url }}">← All conference trips</a></p>
+
+      <header class="conference-header">
+        <h1 class="page__title">{{ page.title }}</h1>
+        {% if page.place %}<p class="conference-place">{{ page.place }}</p>{% endif %}
+      </header>
+
+      {% comment %}
+        Each "## heading" section becomes a column (conference | travel);
+        anything before the first heading spans the full width.
+      {% endcomment %}
+      {% capture story %}{{ content | replace: 'src="', photo_src | replace: fix_url, 'src="http' | replace: fix_root, 'src="/' | replace: fix_data, 'src="data:' | replace: '<img ', '<img loading="lazy" decoding="async" ' }}{% endcapture %}
+      {% comment %} Local preview only: fresh photo URLs on every rebuild, so renamed photos never show a cached old picture {% endcomment %}
+      {% if jekyll.environment == "development" %}
+        {% capture fresh %}.jpg?v={{ site.time | date: '%s' }}"{% endcapture %}
+        {% assign story = story | replace: '.jpg"', fresh %}
+      {% endif %}
+      {% assign sections = story | split: '<h2' %}
+
+      <section class="page__content conference-story">
+        {{ sections.first }}
+
+        {% if sections.size > 1 %}
+          <div class="conference-columns">
+            {% for section in sections offset: 1 %}
+              <div class="conference-column">
+                <h2{{ section }}
+                {% unless section contains '<img' %}
+                  <div class="conference-photos conference-photos--3" aria-hidden="true">
+                    {% for i in (1..2) %}
+                      <figure class="conference-photo"><span class="conference-photo__empty"></span><figcaption>Photo caption</figcaption></figure>
+                    {% endfor %}
+                  </div>
+                {% endunless %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </section>
+
+      {% if page.previous or page.next %}
+        <nav class="conference-pager" aria-label="More conference trips">
+          {% if page.previous %}
+            <a class="conference-pager__link conference-pager__link--older" href="{{ page.previous.url | relative_url }}">
+              <span class="conference-pager__label">← Earlier</span>
+              <span class="conference-pager__title">{{ page.previous.title }}</span>
+            </a>
+          {% endif %}
+          {% if page.next %}
+            <a class="conference-pager__link conference-pager__link--newer" href="{{ page.next.url | relative_url }}">
+              <span class="conference-pager__label">Later →</span>
+              <span class="conference-pager__title">{{ page.next.title }}</span>
+            </a>
+          {% endif %}
+        </nav>
+      {% endif %}
+    </div>
+  </article>
+</div>
+
+<script src="{{ '/assets/js/conference-gallery.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

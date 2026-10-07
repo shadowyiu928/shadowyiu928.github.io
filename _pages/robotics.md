@@ -1,6 +1,6 @@
 ---
 permalink: /robotics/
-title: "Robotics"
+title: "Robocon"
 author_profile: true
 ---
 

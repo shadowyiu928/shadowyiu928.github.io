@@ -1,0 +1,27 @@
+---
+permalink: /conferences/
+title: "Conference Trips"
+author_profile: true
+---
+
+<p>A collection of conferences I've attended, cities I've explored, and people I've met along the way. These are the memories that keep me moving on.</p>
+
+{% comment %} Trips with "more_trips: true" in their file go in the second section. {% endcomment %}
+{% assign conferences = site.conferences | sort: 'date' | reverse %}
+{% assign main_trips = conferences | where_exp: "conf", "conf.more_trips != true" %}
+{% assign more_trips = conferences | where_exp: "conf", "conf.more_trips == true" %}
+
+<div class="education-list conference-list">
+  {% for conf in main_trips %}
+    {% include conference-row.html conf=conf %}
+  {% endfor %}
+</div>
+
+{% if more_trips.size > 0 %}
+  <h2>More Trips</h2>
+  <div class="education-list conference-list">
+    {% for conf in more_trips %}
+      {% include conference-row.html conf=conf %}
+    {% endfor %}
+  </div>
+{% endif %}

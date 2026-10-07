@@ -1,0 +1,29 @@
+{% comment %} One trip card on the Conference Trips page. Pass conf=<trip document>. {% endcomment %}
+{% assign conf = include.conf %}
+{% assign photo_base = '/images/conferences/' | append: conf.slug | append: '/' %}
+{% assign photo_count = conf.highlights | size %}
+<a class="education-item conference-row" href="{{ conf.url | relative_url }}">
+  <div class="conference-row__body">
+    <h3 class="education-degree">{{ conf.title }}</h3>
+    {% if conf.place %}<p class="education-school">{{ conf.place }}</p>{% endif %}
+    <p class="education-dates conference-row__more">More photos &amp; stories →</p>
+  </div>
+  <div class="conference-row__photos" aria-hidden="true">
+    {% for photo in conf.highlights limit: 3 %}
+      <span class="conference-row__photo"{% if forloop.index == 3 and photo_count > 3 %} data-more="+{{ photo_count | minus: 3 }}"{% endif %}>
+        {% comment %} Small copy from scripts/make_conference_thumbs.py if present, else the full photo {% endcomment %}
+        {% assign thumb_path = photo_base | append: 'thumbs/' | append: photo %}
+        {% assign thumb = site.static_files | where: "path", thumb_path | first %}
+        {% if thumb %}{% assign card_src = thumb_path %}{% else %}{% assign card_src = photo_base | append: photo %}{% endif %}
+        <img src="{{ card_src | relative_url }}{% if jekyll.environment == 'development' %}?v={{ site.time | date: '%s' }}{% endif %}" alt="" loading="lazy" decoding="async">
+      </span>
+    {% endfor %}
+    {% comment %} Empty boxes fill the row until there are 3 highlights {% endcomment %}
+    {% if photo_count < 3 %}
+      {% assign empty_count = 3 | minus: photo_count %}
+      {% for i in (1..empty_count) %}
+        <span class="conference-row__photo is-empty"></span>
+      {% endfor %}
+    {% endif %}
+  </div>
+</a>

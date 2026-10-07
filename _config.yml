@@ -258,10 +258,20 @@ collections:
   talks:
     output: false
     permalink: /:collection/:path/
+  conferences:
+    output: true
+    permalink: /:collection/:path/
 
 
 # These settings control how pages and collections are included in the site
 defaults:
+  # _conferences (one page per conference trip; photos in images/conferences/<file name>/)
+  - scope:
+      path: ""
+      type: conferences
+    values:
+      layout: conference
+      author_profile: true
   # _posts
   - scope:
       path: ""
