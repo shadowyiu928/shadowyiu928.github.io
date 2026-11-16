@@ -7,9 +7,11 @@ redirect_from:
   - /about.html
 ---
 
-Hi! My name is Shadow. I am a Ph.D. student in the College of Computing and Data Science (CCDS) at [Nanyang Technological University (NTU)](https://www.ntu.edu.sg/), Singapore, where I am privileged to be supervised by [Asst. Prof. Yoonchang Sung](https://yoonchangsung.com/) in the [Algorithmic Robotics Group (ARG)](https://algrobogroup.github.io/). My research interests lie at the intersection of **Embodied AI** and **Vision-Language-Action (VLA) models**, with a current focus on building generalizable, instruction-following policies for robots.
+Hi! My name is Shadow. I am a Ph.D. student in the College of Computing and Data Science (CCDS) at [Nanyang Technological University (NTU)](https://www.ntu.edu.sg/), Singapore, where I am privileged to be supervised by [Asst. Prof. Yoonchang Sung](https://yoonchangsung.com/) in the [Algorithmic Robotics Group (ARG)](https://algrobogroup.github.io/).
 
-I obtained my M.Phil. at the Department of Electronic and Computer Engineering (ECE) from the [Hong Kong University of Science and Technology (HKUST)](https://www.hkust.edu.hk/), and my B.Eng. in Computer Engineering (CPEG) with minors in Robotics, Physics and Humanities (Music) from the same university.
+My research interests lie in **robot learning**, **planning**, and **embodied AI**. My main focus is **vision-language-action (VLA) models**, working toward **generalist robot policies** that can follow instructions across many tasks and environments. I am also working on **uncertainty quantification** for robot decision-making. More broadly, I am interested in **task and motion planning (TAMP)**, **human-robot interaction**, **world models**, and **LLM-based agents**. I'm always happy to chat about research or potential collaborations, so feel free to reach out!
+
+I obtained my M.Phil. at the Department of Electronic and Computer Engineering (ECE) from the [Hong Kong University of Science and Technology (HKUST)](https://www.hkust.edu.hk/), where I worked on computer vision and robot perception, and my B.Eng. in Computer Engineering (CPEG) with minors in Robotics, Physics and Humanities (Music) from the same university.
 
 Outside of academia, I am a dedicated [musician]({{ '/hobbies/music/' | relative_url }})🎶 and a [marathon runner]({{ '/hobbies/marathon/' | relative_url }})🏃🏻‍♀️. My future goal is to finish a full triathlon🏊🏻‍♀️🚴🏻‍♀️🏃🏻‍♀️.
 

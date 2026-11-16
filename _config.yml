@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Shadow Yiu"
 title_separator          : "-"
 name                     : &name "Shadow Yiu"
-description              : &description "Ph.D. student at NTU CCDS working on Robot Learning and VLA models"
+description              : &description "Ph.D. student at NTU working on robot learning, vision-language-action models, and uncertainty-aware decision-making"
 url                      : https://shadowyiu928.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -193,6 +193,10 @@ exclude:
   - README
   - tmp
   - vendor
+  # Helper files, not pages
+  - markdown_generator
+  - scripts
+  - docker-compose.yaml
   # Academic Pages demo content (not part of this site)
   - _posts
   - _publications
