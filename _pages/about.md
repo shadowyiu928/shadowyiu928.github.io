@@ -13,7 +13,7 @@ My research interests lie in **robot learning**, **planning**, and **embodied AI
 
 I obtained my M.Phil. in Electronic and Computer Engineering (ECE) from the [Hong Kong University of Science and Technology (HKUST)](https://www.hkust.edu.hk/), where I worked on computer vision and robot perception. Before that, I completed my B.Eng. in Computer Engineering (CPEG) with minors in Robotics, Physics, and Humanities (Music) at the same university.
 
-Outside of academia, I am a dedicated [musician]({{ '/hobbies/music/' | relative_url }})🎶 and a [marathon runner]({{ '/hobbies/marathon/' | relative_url }})🏃🏻‍♀️ (my first full marathon at SC Hong Kong Marathon: 3:47:07). My future goal is to complete a full triathlon🏊🏻‍♀️🚴🏻‍♀️🏃🏻‍♀️.
+Outside of academia, I am a dedicated [musician]({{ '/hobbies/music/' | relative_url }})🎶, performing as a vocalist, pianist, percussionist, and conductor. I am also a [marathon runner]({{ '/hobbies/marathon/' | relative_url }})🏃🏻‍♀️ and finished my first full marathon at the Standard Chartered Hong Kong Marathon in 3:47:07. My future goal is to complete a full triathlon🏊🏻‍♀️🚴🏻‍♀️🏃🏻‍♀️.
 
 ## Education
 
