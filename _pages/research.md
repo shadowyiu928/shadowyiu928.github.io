@@ -32,9 +32,10 @@ author_profile: true
     <div class="pub-item__body">
       <h4 class="pub-item__title">High-fidelity and Realistic Rendering of Recycling Objects in Dynamic Environments for Robotic Perception</h4>
       <p class="pub-item__authors"><strong>Cheuk Tung Shadow Yiu</strong>, Hiu Ching Lo, Haolun Huang, Kam Tim Woo</p>
-      <p class="pub-item__meta">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025 Workshop: Advancements for Intelligent Robotics in 4D Scenes (AIR4D)
-      <br>Best Paper Finalist
-      <br>20 Oct 2025 – 24 Oct 2025 · Hangzhou, China</p>
+      <p class="pub-item__venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025 Workshop: Advancements for Intelligent Robotics in 4D Scenes (AIR4D)</p>
+      <p class="pub-item__award">🏆 Best Paper Finalist</p>
+      <p class="pub-item__meta">20 Oct 2025 – 24 Oct 2025 · Hangzhou, China</p>
+      <p class="pub-item__links"><a class="pub-item__link" href="{{ '/conferences/2025-10-iros/' | relative_url }}">Trip photos</a></p>
     </div>
   </article>
 
@@ -53,8 +54,8 @@ author_profile: true
       <h4 class="pub-item__title">Strategic System Design for High Precision in Assembly Processes of CPU</h4>
       <p class="pub-item__authors"><strong>Cheuk Tung Shadow Yiu</strong>, Kam Tim Woo</p>
       <p class="pub-item__venue">IEEE International Conference on Robotics and Automation (ICRA) 2025</p>
-      <p class="pub-item__meta">19 May 2025 – 23 May 2025 · Atlanta, US</p>
-      <p class="pub-item__links"><a class="pub-item__link" href="https://ieeexplore.ieee.org/document/11128746" target="_blank" rel="noopener noreferrer">Paper</a></p>
+      <p class="pub-item__meta">19 May 2025 – 23 May 2025 · Atlanta, USA</p>
+      <p class="pub-item__links"><a class="pub-item__link" href="https://ieeexplore.ieee.org/document/11128746" target="_blank" rel="noopener noreferrer">Paper</a><a class="pub-item__link" href="{{ '/conferences/2025-05-icra/' | relative_url }}">Trip photos</a></p>
     </div>
   </article>
 
@@ -70,7 +71,7 @@ author_profile: true
 
 </div>
 
-### UG
+### Undergraduate
 
 <div class="pub-list">
 
